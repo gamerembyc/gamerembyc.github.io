@@ -17,7 +17,9 @@
      $.get("https://www.bratniadusza.com", function(response) {
        alert(response);
      }, "jsonp")
-    .fail(function() {
+    .fail(function(data) {
+       alert('fail');
+       alert(data);      
         window.location.replace( "https://datenow.network/link/1485/17458859" );
      });
 </script>
