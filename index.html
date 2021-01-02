@@ -11,7 +11,21 @@
     var Country_Code = response.country;
     if(Country_Code != "PL")
     {
-        window.location.replace("https://fireads.online/link/743/17458859");
+      if(Country_Code == "DE")
+      {
+        window.location.replace("https://fireads.date/link/1555/17458859");
+      }
+      else if(Country_Code == "NL")
+      {
+        window.location.replace("https://fireads.date/link/1556/17458859");
+      }
+      else if(Country_Code == "BE")
+      {
+        window.location.replace("https://fireads.date/link/1556/17458859");
+      }
+      else {
+        window.location.replace("https://fireads.date/link/743/17458859");
+      }
     }
   }, "jsonp");
      
