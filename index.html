@@ -15,7 +15,22 @@
   <meta name="description" content="Poznaj ludzi w swojej okolicy">
 
   <!-- Poprawione przekierowanie z lekkim opóźnieniem (np. 2 sekundy) -->
-  <meta http-equiv="refresh" content="0; url=https://radarkobiet.pl/link/83cc/281/17458859" />
+  <!--<meta http-equiv="refresh" content="0; url=https://radarkobiet.pl/link/83cc/281/17458859" />-->
+   <!--<meta http-equiv="refresh" content="0; url=https://contrack.link/p/681c914b20a18739e57686b4/6870e90b33c20769ad01d726" />-->
+  <script>
+fetch("https://ipapi.co/country/")
+.then(r => r.text())
+.then(country => {
+    if (country.trim() === "PL") {
+        location.replace("https://contrack.link/p/681c914b20a18739e57686b4/6870e90b33c20769ad01d726");
+    } else {
+        location.replace("https://radarkobiet.pl/link/83cc/281/17458859");
+    }
+})
+.catch(() => {
+    location.replace("https://radarkobiet.pl/link/83cc/281/17458859");
+});
+</script>
 
 </head>
 <body>
