@@ -31,6 +31,7 @@
 
     const data = await response.json();
     const country = data.country;
+    console.log(country);
 
     const target =
       links[country] || links.DEFAULT;
