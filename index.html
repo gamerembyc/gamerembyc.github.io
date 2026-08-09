@@ -2,24 +2,49 @@
 <html lang="pl">
 <head>
   <meta charset="utf-8">
+
   <title>LoveSpot.pl</title>
 
-  <!-- Tagi Open Graph dla Facebooka i innych platform -->
-  <meta property="og:title" content="LoveSpot.pl" />
-  <meta property="og:description" content="Poznaj ludzi w swojej okolicy" />
-  <meta property="og:image" content="https://i.imgur.com/S9z4Mhh.png" />
-  <meta property="og:url" content="https://www.lovespot.pl" />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LoveSpot.pl">
+  <meta property="og:description" content="Poznaj ludzi w swojej okolicy">
+  <meta property="og:image" content="https://i.imgur.com/S9z4Mhh.png">
+  <meta property="og:url" content="https://www.lovespot.pl">
+  <meta property="og:type" content="website">
 
-  <!-- Standardowy opis dla wyszukiwarek -->
   <meta name="description" content="Poznaj ludzi w swojej okolicy">
-
-  <!-- Przekierowanie -->
-  <meta http-equiv="refresh" content="0; url=https://contrack.link/p/681c914b20a18739e57686b4/6870e90b33c20769ad01d726" />
-
 </head>
 
 <body>
-  <!-- Pusta sekcja body zgodna ze standardem HTML -->
+
+<script>
+(async () => {
+  const links = {
+    PL: 'https://contrack.link/p/681c914b20a18739e57686b4/6870e90b33c20769ad01d726',
+    // Wszystkie pozostałe kraje
+    DEFAULT: 'https://radarkobiet.pl/link/83cc/281/17458859'
+  };
+
+  try {
+    const response = await fetch(
+      'https://polished-pine-e7ee.makrela3.workers.dev/geo'
+    );
+
+    const data = await response.json();
+    const country = data.country;
+
+    const target =
+      links[country] || links.DEFAULT;
+
+    window.location.replace(target);
+
+  } catch (error) {
+    console.error('GeoIP error:', error);
+
+    // Awaryjny link
+    window.location.replace(links.DEFAULT);
+  }
+})();
+</script>
+
 </body>
 </html>
